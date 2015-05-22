@@ -12,8 +12,8 @@ COPY index.html  /var/www/html/index.html
 RUN cat /var/www/html/index.html
 # Docker automatically extracted. So move files to web directory
 RUN chown -R apache:apache /var/www/html
-RUN ls -la /var/www/html
+
 EXPOSE 80
-RUN cat /var/www/html/index.html
+
 ENTRYPOINT [ "/usr/sbin/httpd" ]
 CMD [ "-D", "FOREGROUND" ]
