@@ -1,0 +1,11 @@
+{
+    "apiVersion": "v1beta3",
+    "kind": "Node",
+    "metadata": {
+        "name": "atomic2",
+        "labels":{ "name": "fed-node-label"}
+    },
+    "spec": {
+        "externalID": "atomic2"
+    }
+}

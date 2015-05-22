@@ -1,0 +1,21 @@
+id: "apache"
+kind: "ReplicationController"
+apiVersion: "v1beta1"
+desiredState:
+  replicas: 2
+  replicaSelector:
+    selectorname: "webserver"
+  podTemplate:
+    desiredState:
+      manifest:
+        version: "v1beta1"
+        id: "Apache"
+        containers:
+          - name: "server-web"
+            image: "fedora-http-v2"
+            ports:
+              - containerPort: 80
+                hostPort: 80
+    labels:
+      name: "apache"
+      selectorname: "webserver"

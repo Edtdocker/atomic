@@ -1,0 +1,34 @@
+{
+  "id": "postgresql",
+  "kind": "ReplicationController",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "replicas": 3,
+    "replicaSelector": {"name": "postgresql"},
+    "podTemplate": {
+      "desiredState": {
+        "manifest": {
+          "version": "v1beta1",
+          "id": "psql",
+          "containers": [{
+            "name": "postgresql",
+            "image": "registry.hub.docker.com/edtdocker/ubuntu-psql",
+            "ports": [{"containerPort": 5432, "protocol": "TCP"}],
+            "command": ["su", "postgres", "--command", "/usr/lib/postgresql/9.3/bin/postgres -D /data/main -c config_file=/data/postgresql.conf"],
+            "volumeMounts":[{
+              "name": "volumen1",
+              "mountPath": "/data"
+            }]
+          }],
+          "volumes": [{
+            "name": "volumen1",
+            "source": {"hostDir": {"path": "/home/fedora/postgresdata"}}
+          }]
+        }
+      },
+      "labels": {
+        "name": "postgresql"
+      }
+  }
+}
+}

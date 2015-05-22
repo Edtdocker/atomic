@@ -1,0 +1,14 @@
+{
+  "id": "psqlservice",
+  "kind": "Service",
+  "apiVersion": "v1beta1",
+  "selector": {
+    "name": "postgresql"
+  },
+  "containerPort": 5432,
+  "protocol": "TCP",
+  "port": 5432,
+  "createExternalLoadBalancer": false,
+  "publicIPs": ["192.168.0.221","192.168.0.160"]
+}
+
