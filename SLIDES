@@ -1,0 +1,140 @@
+% Project Atomic
+% Aitor Rodríguez & Iván Bustos
+% 25/05/2015
+
+# Proyecto Atomic
+- ¿Qué es el proyecto Atomic?		
+- ¿Cómo funciona?		
+- Objetivos		
+- Qué hemos conseguido		 
+
+# ¿Qué es el proyecto Atomic?
+- RPM-ostree		
+- Docker		
+- Kubernetes		
+- Cockpit		
+- Estructura de trabajo		
+
+# ¿Cómo funciona?
+- Preparación de hosts atomic
+- Añadir espacio adicional para containers
+
+# Objetivos
+- Familiarizarnos con el funcionamiento del proyecto atomic		
+- Desarrollar un entorno de trabajo con hosts atomic		
+- Preparar imagenes con servicios independientes		
+- Crear un repositorio local privado para imagenes		
+
+# Qué no hemos conseguido
+- Crear un repositorio local privado
+- Preparar más imagenes independientes
+
+# Dockers
+- ¿Qué son los Dockers?		
+- ¿Cómo funcionan?		
+- Docker daemon		
+- Dockerfiles		
+
+# ¿Qué son los Dockers?
+- Introducción
+- Diferencia VM y Dockers
+
+# ¿Cómo funcionan?
+- Imagenes
+- Containers
+- Repositorios
+
+# Docker daemon
+- docker info
+- docker login
+- docker build
+- docker attach
+- docker create
+- docker start
+- docker run
+- docker rm/rmi
+- docker logs
+
+# Dockerfiles
+- Funcionalidad
+- Estructura
+ 
+# Imagenes Docker personalizadas
+- [Apache](https://github.com/Edtdocker/atomic/blob/master/config_files/httpd/Dockerfile)
+- [PostgreSQL](https://github.com/Edtdocker/atomic/blob/master/config_files/postgres/Dockerfile)
+
+# Kubernetes
+- ¿Qué es Kubernetes?
+- https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/getting-started-guides/fedora/fedora_manual_config.md
+- Configuración del master
+- Configuración minions
+- Preparar conectividad entre hosts
+
+# ¿Qué es Kubernetes?		
+- Cluster de containers 
+- Acelerar operaciones
+- Control sobre grupos de hosts
+
+# Configuración del master		
+- Configuración principal
+- Kube-Apiserver
+- Controller-Manager
+- Nodos
+
+# Configuración minions		
+- Configuración principal
+- Kubelet
+
+# Preparar conectividad entre hosts		
+- ¿Qué es flanneld?
+- Configuración master
+- Configuración minions
+
+# Pods y servicios con kubernetes
+- ¿Qué es un pod?		
+- ¿Qué es un replicationController?		
+- ¿Qué es un servicio?		
+- Ejemplos		
+- Herramientas de control		
+
+# ¿Qúe es un pod?
+- Unidad básica de trabajo de kubernetes
+- Agrupa uno o más containers
+
+# ¿Qué es un replicationController?
+- Estructura orientada a escabilidad horizontal
+- Mantiene un numero determinado de replicas
+- Asegura un servicio siempre en marcha
+
+# ¿Qué es un servicio?
+- Unidad de balanceo de carga
+- Coordinador de containers 
+- Permite el acceso a containers desde el exterior del proyecto Atomic
+
+# Ejemplos 
+- [ReplicationController PostgreSQL](https://github.com/Edtdocker/atomic/blob/master/config_files/Master/RepControllers/postgresql.json)
+- [Servicio PostgreSQL](https://github.com/Edtdocker/atomic/blob/master/config_files/Master/Services/psqlservice.json)
+
+# Herramientas de control
+- Kubectl create
+- Kubectl get
+- Kubectl delete
+- Kubectl resize
+
+# Cockpit
+- ¿Qué es Cockpit?		
+- Instalación en Fedora Atomic		
+- Demostración		
+
+# ¿Qué es Cockpit?
+- Software beta de administración de servidor Linux
+- Control via web
+- Disponible solo en algunas distribuciones		
+
+# Instalación en Fedora Atomic
+- Preinstalado en los hosts atomic
+- Activar socket
+- Visitar puerto predeterminado via HTTP
+
+# Demostración
+- [Cockpit Atomic01](https://192.168.0.177:9090)
