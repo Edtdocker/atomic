@@ -102,7 +102,7 @@
 - Agrupa uno o más containers
 
 # ¿Qué es un replicationController?
-- Estructura orientada a escabilidad horizontal
+- Estructura orientada a escalabilidad horizontal
 - Mantiene un numero determinado de replicas
 - Asegura un servicio siempre en marcha
 
