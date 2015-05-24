@@ -1,10 +1,11 @@
 # Atomic
 ## Introducció al projecte Atomic
 El projecte Atomic proporciona una plataforma que permet la instal·lació i la gestió de contenidors en diferents tipus de servidors (físics, màquines virtuals, cloud…). Els hosts estan orientats a proporcionar els serveis dels containers de la manera més eficient possible i per tant, són hosts molt simples, únicament amb el software necessari.
-Aquests hosts estan dissenyats a partir de l’OStree, que proporciona diversos objectes de sistemes de fitxers en lloc dels paquets RPM habituals. Aquests objectes son immutables i permeten que el sistema es pugui actualiztar facilment i, en cas de ser necessari, fer un rollback(És a dir, tornar a la ultima configuració que funcionaba perfectament).
+Aquests hosts estan dissenyats a partir de l’OStree, quw és un sistema d'actualització en fase Beta per a sistemes operatius Linux que proporciona diversos objectes de sistemes de fitxers en lloc dels paquets RPM habituals. Aquests objectes son immutables i permeten que el sistema es pugui actualiztar facilment i, en cas de ser necessari, fer un rollback(És a dir, tornar a la ultima configuració que funcionaba perfectament).
+
 La execució dels containers es fa per mitjà de Dockers i la gestió dels clusters de dockers es fa via Kubernetes.
 L'objectiu principal es de disposar d'una màquina master, que controla diverses màquines slaves(anomenades minions) que cada una té diferents Dockers amb un servei. Aquests serveis seran accessibles desde l'exterior de la xarxa Atomic una vegada configurat el Kubernetes correctament. Finalment, mitjançant la eina cockpit, es pot monitoritzar i gestionar
-de manera còmoda tots els hosts Atomic.	
+de manera còmoda tots els hosts Atomic.
 	
 ## Requisits
 Per a la implantació del projecte Atomic és necessari:
