@@ -4,26 +4,33 @@
 
 # Proyecto Atomic
 - ¿Qué es el proyecto Atomic?		
-- ¿Cómo funciona?		
+- Instalación de los hosts Atomic	
 - Objetivos		
-- Qué hemos conseguido		 
+- Qué no hemos conseguido		 
 
 # ¿Qué es el proyecto Atomic?
-- RPM-ostree		
-- Docker		
-- Kubernetes		
-- Cockpit		
-- Estructura de trabajo		
+- Plataforma de gestion de contenedores
+- Host creados a partir de RPM-ostree		
+- Ejecución de containers con Docker
+- Gestión de clusters de containers via Kubernetes
+- Monitorización de servidores Linux con Cockpit		
+- Estructura de trabajo	
 
-# ¿Cómo funciona?
+# Instalación de los hosts Atomic
 - Preparación de hosts atomic
+    - Crear la máquina virtual
+    - Añadir meta-data y user-data
 - Añadir espacio adicional para containers
-
+    - Añadir unidad de almacenamiento extra
+    - Añadir el nuevo dispositivo en /etc/sysconfig/docker-storage-setup
+    - Hacer crecer el sistema de ficheros
+    
 # Objetivos
 - Familiarizarnos con el funcionamiento del proyecto atomic		
 - Desarrollar un entorno de trabajo con hosts atomic		
 - Preparar imagenes con servicios independientes		
-- Crear un repositorio local privado para imagenes		
+- Crear un repositorio local privado para imagenes
+- Monitorizar servidores Linux con Cockpit 
 
 # Qué no hemos conseguido
 - Crear un repositorio local privado
@@ -99,7 +106,8 @@
 
 # ¿Qúe es un pod?
 - Unidad básica de trabajo de kubernetes
-- Agrupa uno o más containers
+- Agrupa uno o más containers de un mismo host
+- Todos los contenedores son tratados como una única aplicación
 
 # ¿Qué es un replicationController?
 - Estructura orientada a escalabilidad horizontal
