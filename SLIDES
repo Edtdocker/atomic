@@ -61,6 +61,9 @@
 - docker run
 - docker rm/rmi
 - docker logs
+- docker commit
+- docker tag
+- docker pull/push
 
 # Dockerfiles
 - Funcionalidad
@@ -72,7 +75,6 @@
 
 # Kubernetes
 - ¿Qué es Kubernetes?
-- https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/getting-started-guides/fedora/fedora_manual_config.md
 - Configuración del master
 - Configuración minions
 - Preparar conectividad entre hosts
@@ -83,19 +85,19 @@
 - Control sobre grupos de hosts
 
 # Configuración del master		
-- Configuración principal
-- Kube-Apiserver
-- Controller-Manager
-- Nodos
+- [Configuración principal](https://github.com/Edtdocker/atomic/blob/master/config_files/Master/kubernetes/config)
+- [Kube-Apiserver](https://github.com/Edtdocker/atomic/blob/master/config_files/Master/kubernetes/apiserver)
+- [Controller-Manager](https://github.com/Edtdocker/atomic/blob/master/config_files/Master/kubernetes/controller-manager)
+- [Nodos](https://github.com/Edtdocker/atomic/blob/master/config_files/Master/kubernetes/node.json)
 
 # Configuración minions		
-- Configuración principal
-- Kubelet
+- [Configuración principal](https://github.com/Edtdocker/atomic/blob/master/config_files/Master/kubernetes/config)
+- [Kubelet](https://github.com/Edtdocker/atomic/blob/master/config_files/Minion/kubelet)
 
 # Preparar conectividad entre hosts		
 - ¿Qué es flanneld?
-- Configuración master
-- Configuración minions
+- [Configuración master](https://github.com/Edtdocker/atomic/blob/master/config_files/Master/flanneld/flanneld-conf.json)
+- [Configuración minions](https://github.com/Edtdocker/atomic/blob/master/config_files/Master/flanneld/flanneld)
 
 # Pods y servicios con kubernetes
 - ¿Qué es un pod?		

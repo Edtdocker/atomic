@@ -87,26 +87,36 @@
 <h1>Proyecto Atomic</h1>
 <ul class="incremental">
 <li>¿Qué es el proyecto Atomic?<br /></li>
-<li>¿Cómo funciona?<br /></li>
+<li>Instalación de los hosts Atomic<br /></li>
 <li>Objetivos<br /></li>
-<li>Qué hemos conseguido</li>
+<li>Qué no hemos conseguido</li>
 </ul>
 </section>
 <section id="qué-es-el-proyecto-atomic" class="slide level1">
 <h1>¿Qué es el proyecto Atomic?</h1>
 <ul class="incremental">
-<li>RPM-ostree<br /></li>
-<li>Docker<br /></li>
-<li>Kubernetes<br /></li>
-<li>Cockpit<br /></li>
+<li>Plataforma de gestion de contenedores</li>
+<li>Host creados a partir de RPM-ostree<br /></li>
+<li>Ejecución de containers con Docker</li>
+<li>Gestión de clusters de containers via Kubernetes</li>
+<li>Monitorización de servidores Linux con Cockpit<br /></li>
 <li>Estructura de trabajo</li>
 </ul>
 </section>
-<section id="cómo-funciona" class="slide level1">
-<h1>¿Cómo funciona?</h1>
+<section id="instalación-de-los-hosts-atomic" class="slide level1">
+<h1>Instalación de los hosts Atomic</h1>
 <ul class="incremental">
-<li>Preparación de hosts atomic</li>
-<li>Añadir espacio adicional para containers</li>
+<li>Preparación de hosts atomic
+<ul class="incremental">
+<li>Crear la máquina virtual</li>
+<li>Añadir meta-data y user-data</li>
+</ul></li>
+<li>Añadir espacio adicional para containers
+<ul class="incremental">
+<li>Añadir unidad de almacenamiento extra</li>
+<li>Añadir el nuevo dispositivo en /etc/sysconfig/docker-storage-setup</li>
+<li>Hacer crecer el sistema de ficheros</li>
+</ul></li>
 </ul>
 </section>
 <section id="objetivos" class="slide level1">
@@ -116,6 +126,7 @@
 <li>Desarrollar un entorno de trabajo con hosts atomic<br /></li>
 <li>Preparar imagenes con servicios independientes<br /></li>
 <li>Crear un repositorio local privado para imagenes</li>
+<li>Monitorizar servidores Linux con Cockpit</li>
 </ul>
 </section>
 <section id="qué-no-hemos-conseguido" class="slide level1">
@@ -161,6 +172,9 @@
 <li>docker run</li>
 <li>docker rm/rmi</li>
 <li>docker logs</li>
+<li>docker commit</li>
+<li>docker tag</li>
+<li>docker pull/push</li>
 </ul>
 </section>
 <section id="dockerfiles" class="slide level1">
@@ -181,7 +195,6 @@
 <h1>Kubernetes</h1>
 <ul class="incremental">
 <li>¿Qué es Kubernetes?</li>
-<li>https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/getting-started-guides/fedora/fedora_manual_config.md</li>
 <li>Configuración del master</li>
 <li>Configuración minions</li>
 <li>Preparar conectividad entre hosts</li>
@@ -198,25 +211,25 @@
 <section id="configuración-del-master" class="slide level1">
 <h1>Configuración del master</h1>
 <ul class="incremental">
-<li>Configuración principal</li>
-<li>Kube-Apiserver</li>
-<li>Controller-Manager</li>
-<li>Nodos</li>
+<li><a href="https://github.com/Edtdocker/atomic/blob/master/config_files/Master/kubernetes/config">Configuración principal</a></li>
+<li><a href="https://github.com/Edtdocker/atomic/blob/master/config_files/Master/kubernetes/apiserver">Kube-Apiserver</a></li>
+<li><a href="https://github.com/Edtdocker/atomic/blob/master/config_files/Master/kubernetes/controller-manager">Controller-Manager</a></li>
+<li><a href="https://github.com/Edtdocker/atomic/blob/master/config_files/Master/kubernetes/node.json">Nodos</a></li>
 </ul>
 </section>
 <section id="configuración-minions" class="slide level1">
 <h1>Configuración minions</h1>
 <ul class="incremental">
-<li>Configuración principal</li>
-<li>Kubelet</li>
+<li><a href="https://github.com/Edtdocker/atomic/blob/master/config_files/Master/kubernetes/config">Configuración principal</a></li>
+<li><a href="https://github.com/Edtdocker/atomic/blob/master/config_files/Minion/kubelet">Kubelet</a></li>
 </ul>
 </section>
 <section id="preparar-conectividad-entre-hosts" class="slide level1">
 <h1>Preparar conectividad entre hosts</h1>
 <ul class="incremental">
 <li>¿Qué es flanneld?</li>
-<li>Configuración master</li>
-<li>Configuración minions</li>
+<li><a href="https://github.com/Edtdocker/atomic/blob/master/config_files/Master/flanneld/flanneld-conf.json">Configuración master</a></li>
+<li><a href="https://github.com/Edtdocker/atomic/blob/master/config_files/Master/flanneld/flanneld">Configuración minions</a></li>
 </ul>
 </section>
 <section id="pods-y-servicios-con-kubernetes" class="slide level1">
@@ -233,13 +246,14 @@
 <h1>¿Qúe es un pod?</h1>
 <ul class="incremental">
 <li>Unidad básica de trabajo de kubernetes</li>
-<li>Agrupa uno o más containers</li>
+<li>Agrupa uno o más containers de un mismo host</li>
+<li>Todos los contenedores son tratados como una única aplicación</li>
 </ul>
 </section>
 <section id="qué-es-un-replicationcontroller" class="slide level1">
 <h1>¿Qué es un replicationController?</h1>
 <ul class="incremental">
-<li>Estructura orientada a escabilidad horizontal</li>
+<li>Estructura orientada a escalabilidad horizontal</li>
 <li>Mantiene un numero determinado de replicas</li>
 <li>Asegura un servicio siempre en marcha</li>
 </ul>
